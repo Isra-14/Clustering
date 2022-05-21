@@ -15,7 +15,7 @@ plt.xlabel('Dislikes')
 plt.ylabel('Likes')
 plt.show()
 
-K=3
+K=4
 
 # Select random observation as centroids
 Centroids = (X.sample(n=K))
@@ -60,7 +60,7 @@ while(diff!=0):
         print(diff.sum())
     Centroids = X.groupby(["Cluster"]).mean()[["Likes","Dislikes"]]
 
-color=['blue','green','cyan']
+color=['blue','green','cyan', 'magenta', 'yellow', 'black', 'red', 'pink', 'brown', 'orange', 'purple', 'gray', 'olive', 'indigo', 'maroon', 'lime', 'teal', 'navy', 'aqua']
 for k in range(K):
     data=X[X["Cluster"]==k+1]
     plt.scatter(data["Dislikes"],data["Likes"],c=color[k])
